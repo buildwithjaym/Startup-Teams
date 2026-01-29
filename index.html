@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GEEL 102</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-row">
+      <div>
+        <h1>GEEL 102</h1>
+        <p class="muted">Technopreneurship • 3 members per team</p>
+      </div>
+      <div class="badge">Online</div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Team Info</h2>
+
+      <form id="teamForm" novalidate>
+        <label class="field">
+          <span>Team Name <span class="req">*</span></span>
+          <input id="teamName" type="text" placeholder="e.g., Innovators Squad" maxlength="50" required />
+          <small class="hint">Keep it short and clear.</small>
+        </label>
+
+        <div class="divider"></div>
+
+        <h3>Team Members (3 only)</h3>
+        <p class="muted small">Names are required. Email is optional.</p>
+
+        <div class="grid-3">
+          <div class="member-card">
+            <div class="role">Team Leader / Founder</div>
+            <label class="field">
+              <span>Full Name <span class="req">*</span></span>
+              <input id="m1Name" type="text" placeholder="Full name" required />
+            </label>
+            <label class="field">
+              <span>Email</span>
+              <input id="m1Email" type="email" placeholder="name@email.com" />
+            </label>
+          </div>
+
+          <div class="member-card">
+            <div class="role">Developer</div>
+            <label class="field">
+              <span>Full Name <span class="req">*</span></span>
+              <input id="m2Name" type="text" placeholder="Full name" required />
+            </label>
+            <label class="field">
+              <span>Email</span>
+              <input id="m2Email" type="email" placeholder="name@email.com" />
+            </label>
+          </div>
+
+          <div class="member-card">
+            <div class="role">Designer</div>
+            <label class="field">
+              <span>Full Name <span class="req">*</span></span>
+              <input id="m3Name" type="text" placeholder="Full name" required />
+            </label>
+            <label class="field">
+              <span>Email</span>
+              <input id="m3Email" type="email" placeholder="name@email.com" />
+            </label>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button type="button" id="resetBtn" class="btn btn-ghost">Reset</button>
+          <button type="submit" class="btn btn-primary">Generate & Preview</button>
+        </div>
+
+        <p id="errorBox" class="error" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section id="previewSection" class="card hidden">
+      <div class="preview-head">
+        <h2>Preview</h2>
+        <div class="muted small" id="generatedMeta"></div>
+      </div>
+
+      <div id="report" class="report"></div>
+
+      <div class="divider"></div>
+
+<div class="border-panel">
+  <div class="panel-title">Card Border</div>
+
+  <div class="border-grid">
+    <label class="ctrl">
+      <span>Style</span>
+      <select id="borderStyle">
+        <option value="solid">Solid</option>
+        <option value="dashed" selected>Dashed</option>
+        <option value="dotted">Dotted</option>
+        <option value="double">Double</option>
+      </select>
+    </label>
+
+    <label class="ctrl">
+      <span>Thickness</span>
+      <input id="borderWidth" type="range" min="1" max="8" value="2" />
+    </label>
+
+    <label class="ctrl">
+      <span>Corner Radius</span>
+      <input id="borderRadius" type="range" min="0" max="28" value="16" />
+    </label>
+
+    <label class="ctrl">
+      <span>Color</span>
+      <select id="borderColor">
+        <option value="#e5e7eb" selected>Gray</option>
+        <option value="#9D191C">Maroon</option>
+        <option value="#F05722">Orange</option>
+        <option value="#111827">Black</option>
+      </select>
+    </label>
+  </div>
+</div>
+
+<div class="export-row">
+  <button class="btn btn-wf primary-export" id="pngBtn">DOWNLOAD PNG</button>
+</div>
+
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <span class="muted">Made for Technopreneurship • HTML/CSS/JS • Vercel-ready</span>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
